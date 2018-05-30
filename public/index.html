@@ -5,11 +5,70 @@
     <title>Hello World! 2</title>
     <link rel="stylesheet" href="/css/master.css">
     <script type="text/javascript" src="text-game-maker-1.0.0.min.js"></script>
+    <script src="http://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+    <script language="JavaScript">
+    // function postArticle(){
+    //   steem.broadcast.comment(
+    //     document.getElementById('postingKey').value, // posting wif
+    //     '', // author ,
+    //     'steemtest', //first etag
+    //     document.getElementById('username').value, // username
+    //     'name-of-my-test-article-post', // permlink
+    //     document.getElementById('title').value, // title
+    //     document.getElementById('article').value, // body of post
+    //     // json metadata()
+    //     {tags:['secondtag'],app:'steemtest'},
+    //     function(err,result){
+    //       if(err)
+    //         alert('Failure! '+err);
+    //       else
+    //         alert('Success!');
+    //     }
+    //   );
+    // }
+
+    function gomoney(){
+      steem.broadcast.transfer(
+        '',
+       'devpark',
+       'ladyuhyun',
+       '1.000 SBD',
+       'hello',
+       function(err, result){
+        console.log(err,result);
+      });
+      //
+      // steem.broadcast.transfer(
+      //   // document.getElemen햣 ㄴㅅㅁtById('activeKey').value,
+      //   '',
+      //   'devpark',
+      //   'ladyuhyun',
+      //   1.000,
+      //   'hello',
+      //   function(err,result){
+      //     if(err)
+      //       console.log(err);
+      //     else
+      //       alert('Success!');
+      //   }
+      // );
+    }
+    </script>
   </head>
   <body>
     <h1>Hello World2</h1>
     <canvas id="tm-canvas"></canvas>
     <div id="tm-debug-output"></div>
     <script type="text/javascript" src="main.js"></script>
+    <!-- <h2>Post an article to steem blockchain!</h2>
+    Username : <input id="username" type="text"><br/>
+    Posting key : <input id="postingKey" type="password" size="65"><br/>
+    Title of artcle: <input id="title" type="text"><br/>
+    Article text:<br/>
+    <textarea id="article"></textarea><br/>
+    <input id="postIt" type="button" value="Post it!" onclick="postArticle()"><br/> -->
+
+    <!-- activeKey : <input id="activeKey" type="password" size="=65"><br/> -->
+    <input id="transfer" type="button" value="공주전송!" onclick="gomoney()">
   </body>
 </html>
